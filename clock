@@ -1,0 +1,15 @@
+import time
+
+def display_clock():
+    while True:
+        # Get current time
+        current_time = time.strftime("%H:%M:%S", time.localtime())
+
+        # Print the current time with bigger font
+        print("\r\033[1m" + current_time + "\033[0m", end="", flush=True)
+
+        # Wait for 1 second
+        time.sleep(1)
+
+if __name__ == "__main__":
+    display_clock()
