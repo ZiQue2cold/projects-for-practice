@@ -1,0 +1,29 @@
+import random
+
+def determine_winner(player, computer):
+    if player == computer:
+        return "It's a tie!"
+    elif (player == 'pathar' and computer == 'kaichi') or \
+         (player == 'kagaz' and computer == 'pathar') or \
+         (player == 'kaichi' and computer == 'kagaz'):
+        return "You win!"
+    else:
+        return "Computer wins!"
+
+def rock_paper_scissors():
+    choices = ['pathar', 'kagaz', 'kaichi']
+
+    player_choice = input("Enter your choice (Pathar/Kagaz/Kaichi): ").lower()
+    while player_choice not in ['pathar', 'kagaz', 'kaichi']:
+        player_choice = input("Invalid choice. Please enter Pathar, Kagaz, or Kaichi: ").lower()
+
+    computer_choice = random.choice(choices)
+
+    print(f"\nYou chose {player_choice.capitalize()}")
+    print(f"Computer chose {computer_choice.capitalize()}")
+
+    print(determine_winner(player_choice, computer_choice))
+
+if __name__ == "__main__":
+    rock_paper_scissors()
+
